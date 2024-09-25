@@ -1,0 +1,34 @@
+import os
+import subprocess
+
+def run_test(file_path, expected_exit_code):
+    # Run the parser.py script with the file path
+    result = subprocess.run(['python3', 'parser.py', file_path], capture_output=True, text=True)
+    actual_exit_code = result.returncode
+
+    # Compare actual vs expected result
+    if actual_exit_code == expected_exit_code:
+        print(f"PASS: {file_path}")
+    else:
+        print(f"FAIL: {file_path}")
+        print(f"Expected exit code: {expected_exit_code}, but got: {actual_exit_code}")
+        print(f"Output: {result.stdout.strip()}")
+        print()
+
+def main():
+    # Define the path to the test files
+    test_folder = "tests/step1/"
+
+    # Dictionary of test cases with expected exit codes
+    test_cases = {
+        "valid.json": 0,     # Expected to be valid JSON, so exit code 0
+        "invalid.json": 1   # Expected to be invalid JSON, so exit code 1
+    }
+
+    # Iterate through each test case
+    for test_file, expected_exit_code in test_cases.items():
+        file_path = os.path.join(test_folder, test_file)
+        run_test(file_path, expected_exit_code)
+
+if __name__ == "__main__":
+    main()
