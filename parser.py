@@ -8,6 +8,24 @@ def is_valid_json(input_str):
     except json.JSONDecodeError:
         return False
 
+def is_valid_json_object_with_strings(input_str):
+    try:
+        # Try to load the JSON string
+        json_object = json.loads(input_str)
+
+        # Ensure it's a dictionary
+        if not isinstance(json_object, dict):
+            return False
+
+        # Ensure all keys and values are strings
+        for key, value in json_object.items():
+            if not isinstance(key, str) or not isinstance(value, str):
+                return False
+
+        return True
+    except json.JSONDecodeError:
+        return False
+
 def main(file_path):
     try:
         with open(file_path, 'r') as file:
@@ -21,6 +39,13 @@ def main(file_path):
 
     if is_valid_json(input_str):
         print("Valid JSON object")
+    else:
+        print("Invalid JSON")
+        sys.exit(1)  # Error
+
+    # Check if the input string is a valid JSON object with string keys and values
+    if is_valid_json_object_with_strings(input_str):
+        print("Valid JSON object with string keys and values")
         sys.exit(0)  # Success
     else:
         print("Invalid JSON")
