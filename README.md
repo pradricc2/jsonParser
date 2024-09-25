@@ -1,11 +1,54 @@
-# Build Your Own JSON Parser
-This challenge is to build your own JSON parser.
+# Progetto Python - Implementazione personalizzata di un JSON Parser
 
-Building a JSON parser is an easy way to learn about parsing techniques which are useful for everything from parsing simple data formats through to building a fully featured compiler for a programming language.
+Questo progetto è una versione personale di un Json Parser basato sulla sfida proposta dal sito [codingchallenges.fyi](https://codingchallenges.fyi/challenges/challenge-json-parser).
 
-Parsing is often broken up into two stages: lexical analysis and syntactic analysis. Lexical analysis is the process of dividing a sequence of characters into meaningful chunks, called tokens. Syntactic analysis (which is also sometimes referred to as parsing) is the process of analysing the list of tokens to match it to a formal grammar.
+## Descrizione del progetto
 
-You can read far more about building lexers, parses and compilers in what is regarded as the definitive book on compilers: Compilers: Principles, Techniques, and Tools - widely known as the “Dragon Book” (because there’s an illustration of a dragon on the cover).
+Il progetto ha l'obiettivo di realizzare un'applicazione Python che verifica se un file Json è valido
 
-# The Challenge - Building a JSON Parser
-JSON (which stands for JavaScript Object Notation) is a lightweight data-interchange format, which is widely used for transmitting data over the Internet. It is formally defined by the IETF here: https://tools.ietf.org/html/std90 or there’s a simpler graphical representation here: https://www.json.org/json-en.html
+### Versioni
+
+Sono state implementate diverse versioni del progetto:
+
+- **Branch `main`**:
+  - al momento è aggiornato alla versione definitiva del progetto che implementa tutti gli step previsti dalla challenge
+  
+- **Branch `Step2`**:
+  - In questo branch ho implementato lo step 1/2 della sfida, vale a dire ho validato i seguenti oggetti json (string keys e string values):
+    - ‘{}’
+    - {"key": "value"}
+
+- **Branch `Step3`**:
+  - In questo branch ho implementato lo step 3 della sfida, vale a dire ho validato i seguenti oggetti json (string, numeric, boolean e null values):
+    - {
+  "key1": true,
+  "key2": false,
+  "key3": null,
+  "key4": "value",
+  "key5": 101
+}
+
+- **Branch `Step4`**:
+  - In questo branch ho implementato lo step 4 della sfida, vale a dire ho validato i seguenti oggetti json (object e array values):
+    -   {
+  "key": "value",
+  "key-n": 101,
+  "key-o": {},
+  "key-l": []
+}
+
+- **Branch `Step5`**:
+  - In questo branch ho implementato lo step 5 della sfida, vale a dire ho validato le casistiche della test suite http://www.json.org/JSON_checker/test.zip
+
+
+
+## Utilizzo
+```bash
+python parser.py <test case> #eseguo i test uno alla volta fornendo una descrizione della problematica incontrata in caso di validazione fallita
+python run_testS.py #eseguo la test suite riportando se il test ha avuto successo o no
+```
+
+### Prerequisiti
+- Python 3.10
+
+
