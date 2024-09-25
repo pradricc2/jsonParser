@@ -21,7 +21,7 @@ def is_valid_json_object_with_strings(input_str):
         for key, value in json_object.items():
             if not isinstance(key, str):
                 return False
-            if not isinstance(value, (str, int, float, bool, type(None))):
+            if not isinstance(value, (str, int, float, bool, type(None), type([]), type({}))):
                 return False
 
         return True

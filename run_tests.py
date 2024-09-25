@@ -18,7 +18,7 @@ def run_test(file_path, expected_exit_code):
 
 def main():
     # Define the path to the test files
-    test_folders = ["tests/step1/", "tests/step2/", "tests/step3/"]
+    test_folders = ["tests/step1/", "tests/step2/", "tests/step3/", "tests/step4/"]
 
     # Dictionary of test cases with expected exit codes
     test_cases = {

@@ -25,3 +25,16 @@ In this step your goal is to extend the parser to parse a JSON object containing
 }
 
 You can test against the files in the folder tests/step3.
+
+# Step 4
+In this step your goal is to extend the parser to parse a JSON object with object and array values, i.e.:
+
+{
+  "key": "value",
+  "key-n": 101,
+  "key-o": {},
+  "key-l": []
+}
+
+
+You can test against the files in the folder tests/step4.
