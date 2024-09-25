@@ -19,7 +19,9 @@ def is_valid_json_object_with_strings(input_str):
 
         # Ensure all keys and values are strings
         for key, value in json_object.items():
-            if not isinstance(key, str) or not isinstance(value, str):
+            if not isinstance(key, str):
+                return False
+            if not isinstance(value, (str, int, float, bool, type(None))):
                 return False
 
         return True

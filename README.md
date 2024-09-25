@@ -12,3 +12,16 @@ In this step your goal is to extend the parser to parse a simple JSON object con
 {"key": "value"}
 
 You can test against the files in the folder tests/step2.
+
+# Step 3
+In this step your goal is to extend the parser to parse a JSON object containing string, numeric, boolean and null values, i.e.:
+
+{
+  "key1": true,
+  "key2": false,
+  "key3": null,
+  "key4": "value",
+  "key5": 101
+}
+
+You can test against the files in the folder tests/step3.
