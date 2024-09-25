@@ -38,3 +38,8 @@ In this step your goal is to extend the parser to parse a JSON object with objec
 
 
 You can test against the files in the folder tests/step4.
+
+# Step 5
+In this step your goal is to add some of your own tests to ensure you’re confident that your parse can handle valid JSON and will fail with useful error messages on invalid JSON.
+
+Once you’re confident your parser is done and well tested you can try running it against the test suite here: http://www.json.org/JSON_checker/test.zip
