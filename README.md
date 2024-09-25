@@ -6,3 +6,9 @@ It is conventional for CLI tools to return 0 for success and between 1 and 255 f
 
 You can test your code against the files in the folder tests/step1. 
 Consider automating the tests so you can run them repeatedly as you progress through the challenge.
+# Step 2
+In this step your goal is to extend the parser to parse a simple JSON object containing string keys and string values, i.e.:
+
+{"key": "value"}
+
+You can test against the files in the folder tests/step2.
